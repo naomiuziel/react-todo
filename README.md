@@ -1,3 +1,7 @@
+# Simple to-do app using React
+
+<img width="951" alt="image" src="https://user-images.githubusercontent.com/97198969/223857189-a23dec1a-d127-4421-8309-48a74b3345a2.png">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
