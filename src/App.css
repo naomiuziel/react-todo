@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+body {
+  background: #eee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  margin: 0 0 20px 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add-task-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.task-input {
+  margin-right: 10px;
+  background: #eee;
+  -webkit-appearance: none;
+  border: 0;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  flex: 1;
+}
+
+button.add-task-btn {
+  -webkit-appearance: none;
+  border: 0;
+  height: 40px;
+  padding: 0 15px;
+  line-height: 40px;
+  vertical-align: middle;
+  background: #2066d0;
   color: white;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+button.add-task-btn:hover {
+  background: #124ba0;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-list {
+  padding: 0;
+  list-style: none;
+}
+
+.task-list li {
+  display: block;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  transition: all ease .25s;
+}
+
+.task-list li:hover {
+  background: #f0f0f0;
+  padding-left: 15px;
+}
+
+.task-list li.ticked {
+  text-decoration: line-through;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.task-list li:last-child {
+  border-bottom: 0;
+}
+
+.help-text {
+  color: #777;
+  font-style: italic;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+  line-height: 25px;
+}
+
+.tick {
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -2px;
+  transform: scale(0.8);
+}
+
+.tick path {
+  fill: #028602;
 }
