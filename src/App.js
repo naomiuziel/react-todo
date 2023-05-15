@@ -10,11 +10,11 @@ const App = () => {
 
   const [input, setInput] = useState('');
 
-  const changeInput = (event) => {
+  const onChangeInput = (event) => {
     setInput(event.target.value);
   }
 
-  const createTask = () => {
+  const onClickAdd = () => {
     if (input == '') {
       return;
     }
@@ -29,17 +29,17 @@ const App = () => {
 
   const onKeyUp = (event) => {
     if (event.key == 'Enter') {
-      createTask();
+      onClickAdd();
     }
   }
 
-  const toggleComplete = (index) => {
+  const onClickTask = (index) => {
     const newTasks = [ ...tasks ];
     newTasks[index].complete = !newTasks[index].complete;
     setTasks(newTasks);
   }
 
-  const deleteTask = (indexToDelete) => {
+  const onDoubleClickTask = (indexToDelete) => {
     setTasks(tasks.filter((task, index) => {
       return index != indexToDelete;
     }));
@@ -54,12 +54,12 @@ const App = () => {
           type="text"
           placeholder="Add new task..."
           className="task-input"
-          onChange={changeInput}
+          onChange={onChangeInput}
           value={input}
           onKeyUp={onKeyUp}
         />
 
-        <button className="add-task-btn" onClick={createTask}>Add task</button>
+        <button className="add-task-btn" onClick={onClickAdd}>Add task</button>
       </div>
 
       <ul className="task-list">
@@ -67,8 +67,8 @@ const App = () => {
           <li 
             key={index} 
             className={task.complete ? 'ticked' : ''} 
-            onClick={() => toggleComplete(index)}
-            onDoubleClick={() => deleteTask(index)}
+            onClick={() => onClickTask(index)}
+            onDoubleClick={() => onDoubleClickTask(index)}
           >
             {task.complete && <Tick />}
             {task.name}
